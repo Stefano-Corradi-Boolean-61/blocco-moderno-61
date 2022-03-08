@@ -1,0 +1,61 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+section{
+  background-size: cover;
+  background-position: center;
+}
+
+.box{
+  background-color: brown;
+  /* in orizzontale non usare vw ma la percentuale perché vw include anche la dimensione della scrollbar e ne fa apparire quindi una in orizzontale che non deve mai esserci */
+  width: calc(100% - 20px);
+  margin: 10px auto;
+  /* tolgo 20px perché il margine è 10 (10 + 10) */
+  height:calc(100vh - 20px);
+}
+
+
+.overlay{
+  position: relative;
+  background-color: rgba(0, 0, 0, .4);
+  height: 100%;
+}
+
+.box:hover .overlay{
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.box:hover h3{
+  text-shadow: none;
+}
+.overlay h3{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  /* sposte della metà dela mia dimensione */
+  transform: translate(-50%, -50%);
+  color: white;
+  text-transform: uppercase;
+  font-size: 100px;
+  /*           da sx  da su   blur   colore    */
+  text-shadow: 5px     5px   5px   black;
+}
+
+#roma{
+  background-image: url('https://www.roma.com/wp-content/uploads/2021/01/Roma-Roma-com.jpg');
+}
+
+#napoli{
+  background-image: url('https://siviaggia.it/wp-content/uploads/sites/2/2020/08/innamorarsi-napoli.jpg');
+}
+#milano{
+  background-image: url('https://www.infomilano.news/wp-content/uploads/2021/09/milano4.jpg');
+}
